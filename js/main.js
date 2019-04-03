@@ -14,7 +14,7 @@ function setMap(){
         .attr("width", width)
 		.attr("height", height);
 	
-	  //create Albers equal area conic projection centered
+	  //create Albers equal area conic projection
 	  var projection = d3.geoAlbers()
 	  .parallels([20, 60])
 	  .scale(900)
@@ -26,8 +26,8 @@ function setMap(){
     //use Promise.all to parallelize asynchronous data loading
     var promises = [];
     promises.push(d3.csv("data/tempdata.csv")); //load attributes from csv
-    promises.push(d3.json("data/cb_2017_us_state_5m.topojson")); //load background spatial data
-    promises.push(d3.json("data/states.topojson")); //load choropleth spatial data
+    promises.push(d3.json("data/cb_2017_us_state_5m.topojson")); //load background spatial data(all US states)
+    promises.push(d3.json("data/states.topojson")); //load choropleth spatial data (selected states)
 	Promise.all(promises).then(callback);
 	function callback(data){
 		csvData = data[0];
