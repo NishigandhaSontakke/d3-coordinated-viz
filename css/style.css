@@ -1,0 +1,23 @@
+
+/*adding styles to the data*/
+.countries {
+    fill: #e8e6e6;
+    stroke: #CCC;
+    stroke-width: 2px;
+}
+
+.regions{
+    stroke: #CCC;
+    stroke-width: 1px;
+    fill:#daa520;
+}
+
+.gratLines {
+    fill: none;
+    stroke: #999;
+    stroke-width: 1px;
+}
+
+.map {
+    border:medium solid #dad9d9;
+}
